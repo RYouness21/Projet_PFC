@@ -1,0 +1,36 @@
+<div class="container">
+  <header class="jumbotron">
+    <p>{{ content }}</p>
+  </header>
+<form class="form-inline my-2 my-lg-0" >
+  <input type="search" (ngModelChange)="searchUsers(key.value)" float-right #key="ngModel" ngModel
+   name="key" id="searchid" class="form-control mr-sm-2" placeholder="Search users..." required>
+</form>
+<br>
+<table class="table table-striped"  >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+     <!--  <th>Password</th> -->
+      <th>UserName</th>
+      <th>IdRole</th>
+      <th>NameRole</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users" >
+    <td>{{user?.id}}</td>
+    <td>{{user?.email}}</td>
+  <!--    <td>{{user?.password}}</td> -->
+    <td>{{user?.username}}</td>
+    <td>{{user.roles[0].id}}</td>
+    <!-- <td>{{user?.roless(1)}}</td> -->
+    <td>{{user.roles[0].name}}</td>
+  
+    
+  </tr>
+</tbody>
+</table>
+</div>
+
